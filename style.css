@@ -1,0 +1,30 @@
+body{
+    background-color:#E8F5E9;
+}
+
+form{
+    width: 27%;
+   margin: auto;
+   padding-top: 150px;
+
+    
+}
+
+.bg-design{
+    background-color: #A5D6A7;
+    border-radius: 20px;
+    padding: 60px;
+}
+
+.bg-login{
+    margin-top: 50px;
+    background-color: #1B5E20;
+
+}
+
+.submit-btn{
+    background-color: #1B5E20;
+    padding-left: 70px;
+     padding-right: 70px;
+    
+}
