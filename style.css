@@ -30,12 +30,51 @@ form{
 }
 
 .dashboard-topic{
-  background-color: #1B5E20;
+  
   text-align: center;
   font-size: 50px;
   margin-top: 0 px;
   padding-top: 15px;
   padding-bottom: 15px;
+   font-family: "Righteous", sans-serif;
   
     
 }
+
+html {
+    scroll-behavior: smooth;
+}
+
+/* Change the background color of the whole nav bar */
+.nav-pills.nav-fill {
+  background-color: #1B5E20; /* dark green */
+  padding: 10px;            /* add some spacing */
+  border-radius: 50px; 
+    
+}
+
+.nav-pills .nav-link {
+  color:white; /* black text */
+}
+
+/* Change the active pill color */
+.nav-pills .nav-link.active {
+  background-color:#1B5E20; /* lighter green for active */
+  color: #fff;  
+  b
+             
+}
+
+/* Change hover color */
+.nav-pills .nav-link:hover {
+  background-color: #4CAF50; /* hover green */
+  color:white;
+  border-radius: 50px;
+}
+
+.nav-pills.nav-fill.nav-item{
+    color: black;
+}
+
+
+
