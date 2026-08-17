@@ -49,3 +49,10 @@ const HEADERS = { 'Content-Type': 'application/json' };
 
 }
 
+async function addEmployee(){
+    console.log("Add");
+
+    
+    
+}
+

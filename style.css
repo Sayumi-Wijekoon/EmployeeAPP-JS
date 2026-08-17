@@ -37,44 +37,77 @@ form{
   padding-top: 15px;
   padding-bottom: 15px;
    font-family: "Righteous", sans-serif;
+   background-color: #A5D6A7;
   
     
 }
 
-html {
-    scroll-behavior: smooth;
-}
-
-/* Change the background color of the whole nav bar */
-.nav-pills.nav-fill {
-  background-color: #1B5E20; /* dark green */
-  padding: 10px;            /* add some spacing */
-  border-radius: 50px; 
+.button-container {
+  display: flex;
+  flex-direction: column;   /* stack buttons vertically */
+  align-items: center;      /* center horizontally */
+  justify-content: center;  /* center vertically */
+   /* full page height */
     
+   gap: 30px;
+  margin-top: 100px;
+  
 }
 
-.nav-pills .nav-link {
-  color:white; /* black text */
+.button-container .btn {
+  width: 300px;    
+  height: 60px;  
+  font-weight: 700;       /* equal button size */
 }
 
-/* Change the active pill color */
-.nav-pills .nav-link.active {
-  background-color:#1B5E20; /* lighter green for active */
-  color: #fff;  
-  b
-             
+.back-btn{
+    background-color: black;
+    color: white;
+    border-radius: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    font-weight: 700;
+     position: fixed;    /* stays in place even when scrolling */
+  bottom: 20px;       /* distance from bottom edge */
+  right: 20px; 
+   cursor: pointer;
 }
 
-/* Change hover color */
-.nav-pills .nav-link:hover {
-  background-color: #4CAF50; /* hover green */
-  color:white;
-  border-radius: 50px;
+.sub-topic{
+    text-align: center;
+  font-size: 40px;
+  margin-top: 0px;
+  margin-bottom: 30px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+   font-family: "Righteous", sans-serif;
+   background-color: #A5D6A7;
+
+  
 }
 
-.nav-pills.nav-fill.nav-item{
+.center-input {
+  max-width: 600px;   /* control width */
+  margin: 0 auto;     /* center horizontally */
+}
+
+.form-label{
+    font-weight: 700;
     color: black;
 }
 
+#validationServer03 {
+  max-width: 600px;   /* limit width */
+  margin: 0 auto;     /* center horizontally */
+}
 
+
+.btn.btn-success{
+    border-radius: 60px;
+    padding-left: 30px;
+    padding-right: 30px;
+    font-weight: 700;
+}
 
