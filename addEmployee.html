@@ -20,8 +20,15 @@
 <body>
      <h2 class="sub-topic">Add Employee</h2>
     <div class="mb-3 center-input">
-   <label for="validationServer03" class="form-label">Full Name</label>
-    <input type="text" class="form-control is-invalid" id="fullName" aria-describedby="validationServer03Feedback" required>
+   <label for="validationServer03" class="form-label">First Name</label>
+    <input type="text" class="form-control is-invalid" id="firstName" aria-describedby="validationServer03Feedback" required>
+    <div id="validationServer03Feedback" class="invalid-feedback">
+      *Required
+</div>
+
+ <div class="mb-3 center-input">
+   <label for="validationServer03" class="form-label">Last Name</label>
+    <input type="text" class="form-control is-invalid" id="lastName" aria-describedby="validationServer03Feedback" required>
     <div id="validationServer03Feedback" class="invalid-feedback">
       *Required
 </div>
@@ -35,45 +42,46 @@
 
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Phone Number</label>
-  <input type="email" class="form-control" id="phoneNumber" placeholder="07########">
+  <label for="phoneNumber" class="form-label">Phone Number</label>
+  <input type="tel" class="form-control" id="phone" placeholder="07########">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Gender</label>
-  <input type="email" class="form-control" id="gender" placeholder="Male or Female">
+  <label for="gender" class="form-label">Gender</label>
+  <input type="text" class="form-control" id="gender" placeholder="Male or Female">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Date of Joining</label>
-  <input type="email" class="form-control" id="dateOfJoining" placeholder="YYYYY-MM-DD">
+  <label for="dateOfJoining" class="form-label">Date of Joining</label>
+  <input type="date" class="form-control" id="dateOfJoining" placeholder="YYYY-MM-DD">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Department ID</label>
-  <input type="email" class="form-control" id="departmentId" placeholder="">
+  <label for="departmentId" class="form-label">Department ID</label>
+  <input type="number" class="form-control" id="departmentId" placeholder="1">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Designation ID</label>
-  <input type="email" class="form-control" id="designationId" placeholder="">
+  <label for="designationId" class="form-label">Designation ID</label>
+  <input type="number" class="form-control" id="designationId" placeholder="1">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Employee Type</label>
-  <input type="email" class="form-control" id="employeeType" placeholder="Permanet/Contract/Part-time">
+  <label for="employeeType" class="form-label">Employee Type</label>
+  <input type="text" class="form-control" id="employeeType" placeholder="">
 </div>
 
 <div class="mb-3 center-input">
-  <label for="exampleFormControlInput1" class="form-label">Salary</label>
-  <input type="email" class="form-control" id="salary" placeholder="">
+  <label for="salary" class="form-label">Salary</label>
+  <input type="number" class="form-control" id="salary" placeholder="">
 </div>
 
 <li class="btn btn-success">
-           <button type="button" onclick="addEmployee()" class="btn btn-success">ADD </button>
+           <button type="button" onclick="addEmployee()" class="btn btn-success"> ADD </button>
                 
         </li>
 
+         <div id="alert"></div>
         
 
 
