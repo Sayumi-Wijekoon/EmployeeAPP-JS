@@ -92,9 +92,86 @@ function clearForm() {
     });
 }
 
-function loadEmployee() {
-    console.log('Employee list refreshed.');
+function formatDateValue(value) {
+    if (!value) return '';
+
+    const date = new Date(value);
+
+    if (Number.isNaN(date.getTime())) {
+        return value;
+    }
+
+    return date.toLocaleString('en-GB', {
+        year: 'numeric',
+        month: 'short',
+        day: '2-digit',
+        hour: '2-digit',
+        minute: '2-digit'
+    });
 }
+
+function getEmployeeArray(payload) {
+    if (Array.isArray(payload)) return payload;
+    if (Array.isArray(payload?.data)) return payload.data;
+    if (Array.isArray(payload?.result)) return payload.result;
+    if (Array.isArray(payload?.employees)) return payload.employees;
+    return [];
+}
+
+async function loadEmployee() {
+    const tableBody = document.querySelector('#employeeTableBody');
+
+    if (!tableBody) {
+        return;
+    }
+
+    try {
+        const payload = await apiGet('/EmployeeApp/GetEmployees');
+        const employees = getEmployeeArray(payload);
+
+        if (!employees.length) {
+            tableBody.innerHTML = '<tr><td colspan="9" class="text-center">No employees found.</td></tr>';
+            return;
+        }
+
+        tableBody.innerHTML = employees.map((emp) => {
+            const firstName = emp.firstName || emp.first_name || '';
+            const lastName = emp.lastName || emp.last_name || '';
+            const fullName = emp.fullName || [firstName, lastName].filter(Boolean).join(' ') || emp.name || '';
+            const email = emp.email || '';
+            const phone = emp.phone || emp.phoneNumber || '';
+            const gender = emp.gender || '';
+            const dateOfJoining = formatDateValue(emp.dateOfJoining || emp.joinedDate || '');
+            const employeeType = emp.employeeType || '';
+            const salary = emp.salary ?? '';
+            const departmentName = emp.departmentName || emp.department?.name || emp.departmentNameText || '';
+            const designationName = emp.designationName || emp.designation?.name || emp.designationNameText || '';
+
+            return `
+                <tr>
+                    <td>${fullName}</td>
+                    <td>${email}</td>
+                    <td>${phone}</td>
+                    <td>${gender}</td>
+                    <td>${dateOfJoining}</td>
+                    <td>${employeeType}</td>
+                    <td>${salary}</td>
+                    <td>${departmentName}</td>
+                    <td>${designationName}</td>
+                </tr>
+            `;
+        }).join('');
+    } catch (error) {
+        console.error('Failed to load employees:', error);
+        tableBody.innerHTML = '<tr><td colspan="9" class="text-center text-danger">Failed to load employees.</td></tr>';
+    }
+}
+
+window.onload = function () {
+    if (document.querySelector('#employeeTableBody')) {
+        loadEmployee();
+    }
+};
 
 async function addEmployee() {
     console.log("Add");
@@ -104,7 +181,8 @@ async function addEmployee() {
     const email = document.getElementById('email').value.trim();
     const phone = document.getElementById('phone').value.trim();
     const gender = document.getElementById('gender').value.trim();
-    const dateOfJoining = document.getElementById('dateOfJoining').value;
+    const rawDateOfJoining = document.getElementById('dateOfJoining').value;
+    const dateOfJoining = rawDateOfJoining ? `${rawDateOfJoining}:00` : '';
     const departmentId = Number(document.getElementById('departmentId').value);
     const designationId = Number(document.getElementById('designationId').value);
     const employeeType = document.getElementById('employeeType').value.trim();
@@ -115,6 +193,21 @@ async function addEmployee() {
         return;
     }
 
+    if (!Number.isFinite(departmentId) || departmentId <= 0) {
+        showAlert('danger', 'Please enter a valid Department ID greater than 0.');
+        return;
+    }
+
+    if (!Number.isFinite(designationId) || designationId <= 0) {
+        showAlert('danger', 'Please enter a valid Designation ID greater than 0.');
+        return;
+    }
+
+    if (!Number.isFinite(salary) || salary <= 0) {
+        showAlert('danger', 'Please enter a valid salary greater than 0.');
+        return;
+    }
+
     const empData = {
         firstName,
         lastName,
@@ -122,10 +215,10 @@ async function addEmployee() {
         phone,
         gender,
         dateOfJoining,
-        departmentId: Number.isFinite(departmentId) ? departmentId : 0,
-        designationId: Number.isFinite(designationId) ? designationId : 0,
+        departmentId,
+        designationId,
         employeeType,
-        salary: Number.isFinite(salary) ? salary : 0,
+        salary,
     };
 
     console.log('Create employee payload:', empData);
@@ -150,4 +243,10 @@ async function addEmployee() {
     }
 
 }
+
+//async function searchEmployee(fullName){
+  //  console.log("search");
+//}
+
+
 

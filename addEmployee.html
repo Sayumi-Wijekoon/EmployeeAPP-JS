@@ -19,22 +19,31 @@
 
 <body>
      <h2 class="sub-topic">Add Employee</h2>
+
+  <!-- <div class="mb-3 center-input">
+   <label for="firstName" class="form-label">Employee Id</label>
+    <input type="text" class="form-control is-invalid" id="employeeId" aria-describedby="validationServer03Feedback" required>
+    <div id="validationServer03Feedback" class="invalid-feedback">
+      *Required
+    </div-->
+
+     
     <div class="mb-3 center-input">
-   <label for="validationServer03" class="form-label">First Name</label>
+   <label for="firstName" class="form-label">First Name</label>
     <input type="text" class="form-control is-invalid" id="firstName" aria-describedby="validationServer03Feedback" required>
     <div id="validationServer03Feedback" class="invalid-feedback">
       *Required
 </div>
 
  <div class="mb-3 center-input">
-   <label for="validationServer03" class="form-label">Last Name</label>
+   <label for="lastName" class="form-label">Last Name</label>
     <input type="text" class="form-control is-invalid" id="lastName" aria-describedby="validationServer03Feedback" required>
     <div id="validationServer03Feedback" class="invalid-feedback">
       *Required
 </div>
 
  <div class="mb-3 center-input">
-   <label for="validationServer03" class="form-label">Email Address</label>
+   <label for="email" class="form-label">Email Address</label>
     <input type="text" class="form-control is-invalid" id="email" aria-describedby="validationServer03Feedback" required placeholder="name@gmail.com">
     <div id="validationServer03Feedback" class="invalid-feedback">
       *Required
@@ -52,8 +61,8 @@
 </div>
 
 <div class="mb-3 center-input">
-  <label for="dateOfJoining" class="form-label">Date of Joining</label>
-  <input type="date" class="form-control" id="dateOfJoining" placeholder="YYYY-MM-DD">
+  <label for="dateOfJoining" class="form-label">Date & Time of Joining</label>
+  <input type="datetime-local" class="form-control" id="dateOfJoining" placeholder="YYYY-MM-DDTHH:MM">
 </div>
 
 <div class="mb-3 center-input">
