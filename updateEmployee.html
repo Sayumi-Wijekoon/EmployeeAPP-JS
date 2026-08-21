@@ -1,30 +1,100 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
-    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
+        integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous">
     <link rel="stylesheet" href="style.css">
     <style>
         @import url('https://fonts.googleapis.com/css2?family=Righteous&display=swap');
     </style>
 
 </head>
+
 <body>
-     <h2 class="sub-topic">Update Employee</h2>
+    <h2 class="sub-topic">Update Employee</h2>
+
+     <form class="d-flex" role="search">
+        <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search"/>
+        <button class="btn btn-outline-success" type="submit">Search</button>
+      </form>
+
+    <div class="mb-3 center-input">
+        <label for="phoneNumber" class="form-label">First Name</label>
+        <input type="tel" class="form-control" id="phone" placeholder="07########">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="phoneNumber" class="form-label">Last Name></label>
+        <input type="tel" class="form-control" id="phone" placeholder="07########">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="phoneNumber" class="form-label">Email></label>
+        <input type="tel" class="form-control" id="phone" placeholder="07########">
+    </div>
+
+
+     <div class="mb-3 center-input">
+        <label for="phoneNumber" class="form-label">Phone Number</label>
+        <input type="tel" class="form-control" id="phone" placeholder="07########">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="gender" class="form-label">Gender</label>
+        <input type="text" class="form-control" id="gender" placeholder="Male or Female">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="dateOfJoining" class="form-label">Date & Time of Joining</label>
+        <input type="datetime-local" class="form-control" id="dateOfJoining" placeholder="YYYY-MM-DDTHH:MM">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="departmentId" class="form-label">Department ID</label>
+        <input type="number" class="form-control" id="departmentId" placeholder="1">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="designationId" class="form-label">Designation ID</label>
+        <input type="number" class="form-control" id="designationId" placeholder="1">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="employeeType" class="form-label">Employee Type</label>
+        <input type="text" class="form-control" id="employeeType" placeholder="">
+    </div>
+
+    <div class="mb-3 center-input">
+        <label for="salary" class="form-label">Salary</label>
+        <input type="number" class="form-control" id="salary" placeholder="">
+    </div>
+
+    <li class="btn btn-success">
+           <button type="button" onclick="updateEmployee()" class="btn btn-success"> UPDATE</button>
+                
+        </li>
+
+         <div id="alert"></div>
+        
 
 
 
 
-     <a href="/dashboard.html"><button type="button" class="back-btn">Back</button></a>
-    
+    <a href="/dashboard.html"><button type="button" class="back-btn">Back</button></a>
 
 
 
 
 
-      <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js" integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI" crossorigin="anonymous"></script>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+        integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+        crossorigin="anonymous"></script>
     <script src="/app.js"></script>
 </body>
+
 </html>
